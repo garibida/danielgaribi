@@ -13,6 +13,296 @@
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/academicons.min.css">
     <link rel="canonical" href="">
+    
+    <!-- Custom Enhancements -->
+    <style>
+        /* Enhanced header */
+        .site-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        /* Navigation hover effects */
+        .page-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .page-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .page-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #0896c8;
+            transition: width 0.3s ease;
+        }
+        
+        .page-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Enhanced profile section */
+        .profile {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            max-width: 250px;
+        }
+        
+        .profile:hover {
+            transform: scale(1.05);
+        }
+        
+        .profile img {
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Enhanced main content */
+        .post {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            margin-top: 0;
+        }
+        
+        /* Ensure content doesn't get hidden behind header */
+        .page-content {
+            padding-top: 15px;
+        }
+        
+        /* Wider page layout */
+        .wrapper {
+            max-width: 1200px !important;
+            margin: 0 auto;
+        }
+        
+        /* Enhanced section headers */
+        h1.post-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+
+        
+        /* Keep original contact icons styling but add hover effects */
+        .contacticon a {
+            transition: all 0.3s ease;
+        }
+        
+        .contacticon a:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+        
+        /* Enhanced publication cards */
+        .img_row {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .img_row .col.one {
+            align-self: center;
+        }
+        
+        /* Clickable publication elements */
+        .img_row .col.one a {
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .img_row .col.one a:hover {
+            transform: scale(1.05);
+        }
+        
+        .title a:hover {
+            text-decoration: underline !important;
+        }
+        
+        .img_row:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            border-left: 4px solid #0896c8;
+        }
+        
+        .img_row img {
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            max-height: 200px;
+            width: 100%;
+            object-fit: contain;
+            background: white;
+        }
+        
+        .title {
+            transition: color 0.3s ease;
+        }
+        
+        .img_row:hover .title {
+            color: #0896c8 !important;
+        }
+        
+        /* Enhanced buttons - keep original colors */
+        .btn.button {
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            margin: 2px;
+        }
+        
+        .btn.button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Enhanced tables */
+        table {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: visible;
+            padding: 15px;
+        }
+        
+        table td {
+            padding: 12px 8px;
+        }
+        
+        /* Add padding to tables in talks and awards sections */
+        #talks table, #awards table {
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        /* Add space after talks section */
+        #talks {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Add padding to awards section */
+        #awards {
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Responsive profile image for mobile */
+        @media (max-width: 768px) {
+            .profile {
+                width: 100% !important;
+                max-width: 280px;
+                margin: 0 auto 20px auto;
+                float: none !important;
+                display: block;
+            }
+            
+            .profile img {
+                width: 100%;
+                max-width: 250px;
+                height: auto;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+        
+        table tr {
+            transition: all 0.2s ease;
+        }
+        
+        table tr:hover {
+            background: rgba(8, 150, 200, 0.05);
+            transform: scale(1.01);
+            transform-origin: left center;
+            z-index: 5;
+            position: relative;
+        }
+        
+        .date {
+            font-weight: bold;
+        }
+        
+                /* Year headers positioned above publications */
+        .year {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-align: left;
+            margin: 40px 0 60px 0;
+            clear: both;
+            display: block;
+            position: relative;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 5px 0;
+        }
+        
+        /* Publication lists spacing */
+        .publications ol {
+            margin: 0 0 25px 0;
+            padding: 0;
+        }
+
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Add subtle animation to page load */
+        .post-content {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Enhanced footer */
+        .wrapper[style*="font-size: 10px"] {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 15px;
+            margin: 20px auto;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+    </style>
 </head>
 
 <body>
@@ -78,7 +368,7 @@
                 <!-- Publications Section -->
                 <div class="publications" id="publications">
                     <div class="news">
-                        <h3 style="font-size: 24px">Publications</h3>
+                        <h3 style="font-size: 24px">📚 Publications</h3>
                     </div>
                     
                     <!-- 2025 Publications -->
@@ -87,11 +377,15 @@
                         <li>
                             <div class="img_row" style="height: 100%;">
                                 <div class="col one">
-                                    <img src="assets/img/2025_tight_inversion.jpeg" class="rounded z-depth-1" style="max-width: 100%;" alt="Tight Inversion">
+                                    <a href="https://tight-inversion.github.io/" target="_blank">
+                                        <img src="assets/img/2025_tight_inversion.jpeg" class="rounded z-depth-1" style="max-width: 100%;" alt="Tight Inversion">
+                                    </a>
                                 </div>
                                 <div class="col two">
                                     <div id="tight-inversion">
-                                        <span class="title" style="font-weight: bold">Tight Inversion: Image-Conditioned Inversion for Real Image Editing</span>
+                                        <a href="https://tight-inversion.github.io/" target="_blank" style="text-decoration: none; color: inherit;">
+                                            <span class="title" style="font-weight: bold">Tight Inversion: Image-Conditioned Inversion for Real Image Editing</span>
+                                        </a>
                                         <span class="author">
                                             Edo Kadosh<sup>*</sup>, Nir Goren<sup>*</sup>, <a href="https://orpatashnik.github.io/">Or Patashnik</a>, Daniel Garibi, <a href="https://www.cs.tau.ac.il/~dcor/" target="_blank">Daniel Cohen-Or</a>
                                         </span>
@@ -110,11 +404,15 @@
                         <li>
                             <div class="img_row" style="height: 100%;">
                                 <div class="col one">
-                                    <img src="assets/img/2025_tokenverse.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="TokenVerse">
+                                    <a href="https://token-verse.github.io/" target="_blank">
+                                        <img src="assets/img/2025_tokenverse.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="TokenVerse">
+                                    </a>
                                 </div>
                                 <div class="col two">
                                     <div id="tokenverse">
-                                        <span class="title" style="font-weight: bold">TokenVerse: Versatile Multi-concept Personalization in Token Modulation Space</span>
+                                        <a href="https://token-verse.github.io/" target="_blank" style="text-decoration: none; color: inherit;">
+                                            <span class="title" style="font-weight: bold">TokenVerse: Versatile Multi-concept Personalization in Token Modulation Space</span>
+                                        </a>
                                         <span class="author">
                                             Daniel Garibi<sup>*</sup>, <a href="https://www.linkedin.com/in/shahar-yadin-069725195/">Shahar Yadin<sup>*</sup></a>, <a href="https://scholar.google.com/citations?user=-KSDNZQAAAAJ&hl=en">Roni Paiss</a>,
                                             <a href="https://scholar.google.com/citations?user=lbo_R54AAAAJ&hl=en">Omer Tov</a>, <a href="https://scholar.google.com/citations?hl=en&user=I2qheksAAAAJ">Shiran Zada</a>,
@@ -140,11 +438,15 @@
                         <li>
                             <div class="img_row" style="height: 100%;">
                                 <div class="col one">
-                                    <img src="assets/img/turboedit.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="TurboEdit">
+                                    <a href="https://turboedit-paper.github.io/" target="_blank">
+                                        <img src="assets/img/turboedit.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="TurboEdit">
+                                    </a>
                                 </div>
                                 <div class="col two">
                                     <div id="turboedit">
-                                        <span class="title" style="font-weight: bold">TurboEdit: Text-Based Image Editing Using Few-Step Diffusion Models</span>
+                                        <a href="https://turboedit-paper.github.io/" target="_blank" style="text-decoration: none; color: inherit;">
+                                            <span class="title" style="font-weight: bold">TurboEdit: Text-Based Image Editing Using Few-Step Diffusion Models</span>
+                                        </a>
                                         <span class="author">
                                             <a href="https://www.linkedin.com/in/gilad-deutsch-33b006130/">Gilad Deutch</a>, <a href="https://rinongal.github.io/">Rinon Gal</a>, Daniel Garibi, <a href="https://orpatashnik.github.io/">Or Patashnik</a>, <a href="https://www.cs.tau.ac.il/~dcor/" target="_blank">Daniel Cohen-Or</a>
                                         </span>
@@ -163,11 +465,15 @@
                         <li>
                             <div class="img_row" style="height: 100%;">
                                 <div class="col one">
-                                    <img src="assets/img/renoise.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="ReNoise">
+                                    <a href="https://garibida.github.io/ReNoise-Inversion/" target="_blank">
+                                        <img src="assets/img/renoise.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="ReNoise">
+                                    </a>
                                 </div>
                                 <div class="col two">
                                     <div id="renoise">
-                                        <span class="title" style="font-weight: bold">ReNoise: Real Image Inversion Through Iterative Noising</span>
+                                        <a href="https://garibida.github.io/ReNoise-Inversion/" target="_blank" style="text-decoration: none; color: inherit;">
+                                            <span class="title" style="font-weight: bold">ReNoise: Real Image Inversion Through Iterative Noising</span>
+                                        </a>
                                         <span class="author">
                                             Daniel Garibi, <a href="https://orpatashnik.github.io/">Or Patashnik</a>, <a href="https://scholar.google.com/citations?user=imBjSgUAAAAJ">Andrey Voynov</a>, <a href="https://www.elor.sites.tau.ac.il/" target="_blank">Hadar Averbuch-Elor</a>, <a href="https://www.cs.tau.ac.il/~dcor/" target="_blank">Daniel Cohen-Or</a>
                                         </span>
@@ -187,14 +493,18 @@
                     <!-- 2023 Publications -->
                     <h2 class="year">2023</h2>
                     <ol class="bibliography">
-                        <li>
-                            <div class="img_row" style="height: 100%;">
-                                <div class="col one">
-                                    <img src="assets/img/cia.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="Cross-Image Attention">
-                                </div>
-                                <div class="col two">
-                                    <div id="cross-image-attention">
-                                        <span class="title" style="font-weight: bold">Cross-Image Attention for Zero-Shot Appearance Transfer</span>
+                                                 <li>
+                             <div class="img_row" style="height: 100%;">
+                                 <div class="col one">
+                                     <a href="https://garibida.github.io/cross-image-attention/" target="_blank">
+                                         <img src="assets/img/cia.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="Cross-Image Attention">
+                                     </a>
+                                 </div>
+                                 <div class="col two">
+                                     <div id="cross-image-attention">
+                                         <a href="https://garibida.github.io/cross-image-attention/" target="_blank" style="text-decoration: none; color: inherit;">
+                                             <span class="title" style="font-weight: bold">Cross-Image Attention for Zero-Shot Appearance Transfer</span>
+                                         </a>
                                         <span class="author">
                                             <a href="https://yuval-alaluf.github.io/" target="_blank">Yuval Alaluf<sup>*</sup></a>, Daniel Garibi<sup>*</sup>, <a href="https://orpatashnik.github.io/">Or Patashnik</a>, <a href="https://www.elor.sites.tau.ac.il/" target="_blank">Hadar Averbuch-Elor</a>, <a href="https://www.cs.tau.ac.il/~dcor/" target="_blank">Daniel Cohen-Or</a>
                                         </span>
@@ -210,14 +520,18 @@
                             </div>
                         </li>
                         
-                        <li>
-                            <div class="img_row" style="height: 100%;">
-                                <div class="col one">
-                                    <img src="assets/img/local_prompt_mixing.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="Local Prompt Mixing">
-                                </div>
-                                <div class="col two">
-                                    <div id="local-prompt-mixing">
-                                        <span class="title" style="font-weight: bold">Localizing Object-level Shape Variations with Text-to-Image Diffusion Models</span>
+                                                 <li>
+                             <div class="img_row" style="height: 100%;">
+                                 <div class="col one">
+                                     <a href="https://orpatashnik.github.io/local-prompt-mixing/" target="_blank">
+                                         <img src="assets/img/local_prompt_mixing.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="Local Prompt Mixing">
+                                     </a>
+                                 </div>
+                                 <div class="col two">
+                                     <div id="local-prompt-mixing">
+                                         <a href="https://orpatashnik.github.io/local-prompt-mixing/" target="_blank" style="text-decoration: none; color: inherit;">
+                                             <span class="title" style="font-weight: bold">Localizing Object-level Shape Variations with Text-to-Image Diffusion Models</span>
+                                         </a>
                                         <span class="author">
                                             <a href="https://orpatashnik.github.io/">Or Patashnik</a>, Daniel Garibi, Idan Azuri, <a href="https://www.elor.sites.tau.ac.il/" target="_blank">Hadar Averbuch-Elor</a>, <a href="https://www.cs.tau.ac.il/~dcor/" target="_blank">Daniel Cohen-Or</a>
                                         </span>
