@@ -104,6 +104,14 @@
 
         
         /* Keep original contact icons styling but add hover effects */
+        .contacticon {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+        }
+
         .contacticon a {
             transition: all 0.3s ease;
             text-decoration: none !important;
@@ -238,6 +246,15 @@
                 height: auto;
                 margin: 0 auto;
                 display: block;
+            }
+
+            /* Cap the row so 7 icons wrap to a balanced 4 + 3, evenly spaced.
+               4 icons = 4x50 + 3x14 gap = 242px (fits 250); 5 = 306px (wraps). */
+            .contacticon {
+                font-size: 50px;
+                max-width: 250px;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
         
