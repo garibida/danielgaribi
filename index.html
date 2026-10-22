@@ -66,6 +66,7 @@
         }
         
         .profile img {
+            height: auto;
             border-radius: 20px;
             transition: transform 0.3s ease;
         }
@@ -171,6 +172,7 @@
             transition: transform 0.3s ease;
             max-height: 200px;
             width: 100%;
+            height: auto;
             object-fit: contain;
             background: white;
         }
@@ -360,7 +362,14 @@
                 <!-- About Section -->
                 <article class="post-content clearfix">
                     <div class="profile col one right">
-                        <img class="one" src="assets/img/prof_pic.jpg" alt="Daniel Garibi">
+                        <img src="assets/img/thumbnails/prof_pic-600.jpg"
+                             srcset="assets/img/thumbnails/prof_pic-300.jpg 300w,
+                                     assets/img/thumbnails/prof_pic-600.jpg 600w,
+                                     assets/img/prof_pic.jpg 895w"
+                             sizes="250px"
+                             width="600" height="600"
+                             loading="eager" decoding="async"
+                             class="one" alt="Daniel Garibi">
                     </div>
                     
                     <p>I'm a PhD student in Electrical Engineering and Computer Science at Tel-Aviv University, supervised by <a href="https://www.cs.tau.ac.il/~dcor/" target="_blank">Daniel Cohen-Or</a> and <a href="https://www.elor.sites.tau.ac.il/" target="_blank">Hadar Averbuch-Elor</a>. I completed both my MSc and BSc <em>summa cum laude</em> at Tel-Aviv University, having begun my MSc studies while still finishing my BSc.</p>
@@ -408,7 +417,14 @@
                             <div class="img_row" style="height: 100%;">
                                 <div class="col one">
                                     <a href="https://garibida.github.io/IdentityTuning/" target="_blank">
-                                        <img src="assets/img/identityTuning.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="Identity Tuning">
+                                        <img src="assets/img/thumbnails/identityTuning-768.jpg"
+                                             srcset="assets/img/thumbnails/identityTuning-384.jpg 384w,
+                                                     assets/img/thumbnails/identityTuning-768.jpg 768w,
+                                                     assets/img/thumbnails/identityTuning-1152.jpg 1152w"
+                                             sizes="(min-width: 1200px) 346px, calc(33.333vw - 55px)"
+                                             width="768" height="372"
+                                             loading="eager" decoding="async"
+                                             class="rounded z-depth-1" style="max-width: 100%;" alt="Identity Tuning">
                                     </a>
                                 </div>
                                 <div class="col two">
@@ -435,7 +451,14 @@
                             <div class="img_row" style="height: 100%;">
                                 <div class="col one">
                                     <a href="https://ronen94.github.io/SAEdit/" target="_blank">
-                                        <img src="assets/img/saedit.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="SAEdit">
+                                        <img src="assets/img/thumbnails/saedit-768.jpg"
+                                             srcset="assets/img/thumbnails/saedit-384.jpg 384w,
+                                                     assets/img/thumbnails/saedit-768.jpg 768w,
+                                                     assets/img/thumbnails/saedit-1152.jpg 1152w"
+                                             sizes="(min-width: 1200px) 346px, calc(33.333vw - 55px)"
+                                             width="768" height="229"
+                                             loading="lazy" decoding="async"
+                                             class="rounded z-depth-1" style="max-width: 100%;" alt="SAEdit">
                                     </a>
                                 </div>
                                 <div class="col two">
@@ -462,7 +485,14 @@
                             <div class="img_row" style="height: 100%;">
                                 <div class="col one">
                                     <a href="https://contextual-repulsion.github.io/" target="_blank">
-                                        <img src="assets/img/2026_repul.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="Contextual Repulsion">
+                                        <img src="assets/img/thumbnails/2026_repul-768.jpg"
+                                             srcset="assets/img/thumbnails/2026_repul-384.jpg 384w,
+                                                     assets/img/thumbnails/2026_repul-768.jpg 768w,
+                                                     assets/img/thumbnails/2026_repul-1152.jpg 1152w"
+                                             sizes="(min-width: 1200px) 346px, calc(33.333vw - 55px)"
+                                             width="768" height="212"
+                                             loading="lazy" decoding="async"
+                                             class="rounded z-depth-1" style="max-width: 100%;" alt="Contextual Repulsion">
                                     </a>
                                 </div>
                                 <div class="col two">
@@ -493,7 +523,14 @@
                             <div class="img_row" style="height: 100%;">
                                 <div class="col one">
                                     <a href="https://tight-inversion.github.io/" target="_blank">
-                                        <img src="assets/img/2025_tight_inversion.jpeg" class="rounded z-depth-1" style="max-width: 100%;" alt="Tight Inversion">
+                                        <img src="assets/img/thumbnails/2025_tight_inversion-768.jpg"
+                                             srcset="assets/img/thumbnails/2025_tight_inversion-384.jpg 384w,
+                                                     assets/img/thumbnails/2025_tight_inversion-768.jpg 768w,
+                                                     assets/img/thumbnails/2025_tight_inversion-1152.jpg 1152w"
+                                             sizes="(min-width: 1200px) 346px, calc(33.333vw - 55px)"
+                                             width="768" height="512"
+                                             loading="lazy" decoding="async"
+                                             class="rounded z-depth-1" style="max-width: 100%;" alt="Tight Inversion">
                                     </a>
                                 </div>
                                 <div class="col two">
@@ -520,7 +557,14 @@
                             <div class="img_row" style="height: 100%;">
                                 <div class="col one">
                                     <a href="https://token-verse.github.io/" target="_blank">
-                                        <img src="assets/img/2025_tokenverse.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="TokenVerse">
+                                        <img src="assets/img/thumbnails/2025_tokenverse-768.jpg"
+                                             srcset="assets/img/thumbnails/2025_tokenverse-384.jpg 384w,
+                                                     assets/img/thumbnails/2025_tokenverse-768.jpg 768w,
+                                                     assets/img/thumbnails/2025_tokenverse-1152.jpg 1152w"
+                                             sizes="(min-width: 1200px) 346px, calc(33.333vw - 55px)"
+                                             width="768" height="422"
+                                             loading="lazy" decoding="async"
+                                             class="rounded z-depth-1" style="max-width: 100%;" alt="TokenVerse">
                                     </a>
                                 </div>
                                 <div class="col two">
@@ -554,7 +598,14 @@
                             <div class="img_row" style="height: 100%;">
                                 <div class="col one">
                                     <a href="https://turboedit-paper.github.io/" target="_blank">
-                                        <img src="assets/img/turboedit.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="TurboEdit">
+                                        <img src="assets/img/thumbnails/turboedit-768.jpg"
+                                             srcset="assets/img/thumbnails/turboedit-384.jpg 384w,
+                                                     assets/img/thumbnails/turboedit-768.jpg 768w,
+                                                     assets/img/thumbnails/turboedit-1152.jpg 1152w"
+                                             sizes="(min-width: 1200px) 346px, calc(33.333vw - 55px)"
+                                             width="768" height="295"
+                                             loading="lazy" decoding="async"
+                                             class="rounded z-depth-1" style="max-width: 100%;" alt="TurboEdit">
                                     </a>
                                 </div>
                                 <div class="col two">
@@ -581,7 +632,14 @@
                             <div class="img_row" style="height: 100%;">
                                 <div class="col one">
                                     <a href="https://garibida.github.io/ReNoise-Inversion/" target="_blank">
-                                        <img src="assets/img/renoise.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="ReNoise">
+                                        <img src="assets/img/thumbnails/renoise-768.jpg"
+                                             srcset="assets/img/thumbnails/renoise-384.jpg 384w,
+                                                     assets/img/thumbnails/renoise-768.jpg 768w,
+                                                     assets/img/thumbnails/renoise-1152.jpg 1152w"
+                                             sizes="(min-width: 1200px) 346px, calc(33.333vw - 55px)"
+                                             width="768" height="281"
+                                             loading="lazy" decoding="async"
+                                             class="rounded z-depth-1" style="max-width: 100%;" alt="ReNoise">
                                     </a>
                                 </div>
                                 <div class="col two">
@@ -612,7 +670,14 @@
                             <div class="img_row" style="height: 100%;">
                                 <div class="col one">
                                     <a href="https://garibida.github.io/cross-image-attention/" target="_blank">
-                                        <img src="assets/img/cia.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="Cross-Image Attention">
+                                        <img src="assets/img/thumbnails/cia-768.jpg"
+                                             srcset="assets/img/thumbnails/cia-384.jpg 384w,
+                                                     assets/img/thumbnails/cia-768.jpg 768w,
+                                                     assets/img/cia.jpg 952w"
+                                             sizes="(min-width: 1200px) 346px, calc(33.333vw - 55px)"
+                                             width="768" height="535"
+                                             loading="lazy" decoding="async"
+                                             class="rounded z-depth-1" style="max-width: 100%;" alt="Cross-Image Attention">
                                     </a>
                                 </div>
                                 <div class="col two">
@@ -639,7 +704,14 @@
                             <div class="img_row" style="height: 100%;">
                                 <div class="col one">
                                     <a href="https://orpatashnik.github.io/local-prompt-mixing/" target="_blank">
-                                        <img src="assets/img/local_prompt_mixing.jpg" class="rounded z-depth-1" style="max-width: 100%;" alt="Local Prompt Mixing">
+                                        <img src="assets/img/thumbnails/local_prompt_mixing-768.jpg"
+                                             srcset="assets/img/thumbnails/local_prompt_mixing-384.jpg 384w,
+                                                     assets/img/thumbnails/local_prompt_mixing-768.jpg 768w,
+                                                     assets/img/thumbnails/local_prompt_mixing-1152.jpg 1152w"
+                                             sizes="(min-width: 1200px) 346px, calc(33.333vw - 55px)"
+                                             width="768" height="432"
+                                             loading="lazy" decoding="async"
+                                             class="rounded z-depth-1" style="max-width: 100%;" alt="Local Prompt Mixing">
                                     </a>
                                 </div>
                                 <div class="col two">
